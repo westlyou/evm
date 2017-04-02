@@ -1,6 +1,18 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
+    <record id="view_project_evm_tree" model="ir.ui.view">
+        <field name="name">project.evm.tree</field>
+        <field name="model">project.evm</field>
+        <field name="arch" type="xml">
+            <tree string="Gestión del valor ganado del proyecto">   
+                <field name="project_id"/>
+                <field name="tipo_indicador"/>
+                <field name="valor_indicador"/>
+            </tree>
+        </field>
+    </record>
+
     <!--
     <record model="ir.ui.view" id="template.list">
       <field name="name">template list</field>

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import project_evm
+import project_evm
