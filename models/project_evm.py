@@ -29,10 +29,9 @@ _TIPO_INDICADOR = [('PV', 'Valor planificado (Planned Value)'),
 ################################################################################
 class project_evm(models.Model):
     _name = 'project.evm'
-    _description = 'Indicadores de la gestión del valor ganado'
+    _description = 'Indicadores para controlar el valor ganado de los proyectos'
 
-    name = fields.Char()
-    description = fields.Text()
-    project_id = fields.Many2many('project.project', string='Proyecto', readonly=True, copy=False, help='Proyecto al cual esta asociado el indicador')
+    project_id = fields.Many2one('project.project', string='Proyecto', required=True, copy=False, help='Proyecto al cual esta asociado el indicador')
     tipo_indicador = fields.Selection(_TIPO_INDICADOR, 'Tipo', required=True, copy=False, help ='Tipo de indicador EVM')
     valor_indicador = fields.Float('Valor', copy=False, help='Valor del indicador EVM')
+    observaciones = fields.Text('Observaciones')
