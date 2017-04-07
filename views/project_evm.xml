@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <!-- Indicadores EVM; formulario lista -->
+    <!-- KPI EVM; list form -->
     <record id="view_project_evm_tree" model="ir.ui.view"> 
       <field name="name">project.evm.tree</field>
       <field name="model">project.evm</field>
@@ -14,7 +15,7 @@
       </field>
     </record>
 
-    <!-- Indicadores EVM; formulario ficha -->
+    <!-- KPI EVM; form sheet -->
     <record id="view_project_evm_edit" model="ir.ui.view">
       <field name="name">project.evm.form</field>
       <field name="model">project.evm</field>
@@ -51,30 +52,7 @@
       </field>
     </record>
 
-    <!--
-    <record model="ir.ui.view" id="template.list">
-      <field name="name">template list</field>
-      <field name="model">template.template</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
-
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="template.action_window">
-      <field name="name">template window</field>
-      <field name="res_model">template.template</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
+    <!-- Server action -->
     <record id="action_project_evm_kpi" model="ir.actions.act_window">
       <field name="name">Indicadores EVM</field>
       <field name="res_model">project.evm</field>
@@ -82,38 +60,11 @@
       <field name="view_mode">tree,form</field>  
       <field name="help">Gestión de indicadores EVM con sus valores</field>
     </record>
-    <!--
-    <record model="ir.actions.server" id="template.action_server">
-      <field name="name">template server</field>
-      <field name="model_id" ref="model_template_template"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
 
     <!-- Top menu item -->
     <menuitem id="menu_project_evm" name="Earned Value Management" parent="project.menu_main_pm" sequence="20"/>
 
     <menuitem id="menu_project_evm_kpi" name="Indicadores EVM" parent="menu_project_evm" sequence="10" action="evm.action_project_evm_kpi"/>
-    <!--
-    <menuitem name="template" id="template.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="template.menu_1" parent="template.menu_root"/>
-    <menuitem name="Menu 2" id="template.menu_2" parent="template.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="template.menu_1_list" parent="template.menu_1"
-              action="template.action_window"/>
-    <menuitem name="Server to list" id="template" parent="template.menu_2"
-              action="template.action_server"/>
-    -->
+
   </data>
 </odoo>

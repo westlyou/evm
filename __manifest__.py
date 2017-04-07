@@ -34,11 +34,11 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv'
+        'views/project.xml',
         'views/project_evm.xml',
-        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'data/project_ev_demo.xml',
     ],
 }
