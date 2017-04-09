@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <!-- Search -->
+    <record id="view_evm_project_user_search" model="ir.ui.view">
+      <field name="name">report.project.evm.user.search</field>
+      <field name="model">project.evm</field>
+      <field name="arch" type="xml">
+        <search string="EVM Analysis">
+          <field name="project_id"/>
+          <field name="tipo_indicador"/>
+          <group expand="1" strign="Group by">
+            <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
+            <filter string="Indicador" name="tipo_indicador" context="{'group_by':'tipo_indicador'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- Server action -->
+    <record id="action_project_evm_report" model="ir.actions.act_window">
+      <field name="name">EVM Analysis</field>
+      <field name="res_model">project.evm</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">pivot,graph</field>
+      <field name="search_view_id" ref="view_evm_project_user_search"/>
+      <field name="help">This report allows you to analyse EVM</field>
+    </record>
+
+  </data>
+</odoo>

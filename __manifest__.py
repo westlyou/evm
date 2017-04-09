@@ -36,6 +36,7 @@
         # 'security/ir.model.access.csv'
         'views/project.xml',
         'views/project_evm.xml',
+        'report/project_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
